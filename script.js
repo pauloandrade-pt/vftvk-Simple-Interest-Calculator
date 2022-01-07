@@ -6,6 +6,7 @@ function compute()
     // Principal validation
     if(!(principal > 0)){ // if principal is not more than 0
           alert("Enter a positive number");
+          document.getElementById("principal").focus();
           return; // do not continue executing
     }
     var rate = document.getElementById("rate").value;
@@ -14,13 +15,13 @@ function compute()
     var year = new Date().getFullYear()+parseInt(years);
     var result =  document.getElementById("result")
     result.innerHTML =
-        `If you deposit ${principal},<br>
-        at an interest rate of ${rate}.<br>
-        You will receive an amount of ${interest},<br>
-        in the year ${year}<br>`
+        `If you deposit <mark>${principal}</mark>,<br>
+        at an interest rate of <mark>${rate}</mark>.<br>
+        You will receive an amount of <mark>${interest}</mark>,<br>
+        in the year <mark>${year}</mark><br>`
 }
 function updateRate() 
 {
     var rateval = document.getElementById("rate").value;
-    document.getElementById("rate_val").innerText=rateval;
+    document.getElementById("rate_val").innerText=rateval+"%";
 }
